@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Insert Text</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var dO = new Date();          //get current date and time object
+            var today = dO.getDay();     //gives day of the week as an array
+
+           //break down date object into desired components
+            dmonth = dO.getDate();
+            dmonth = dmonth.toString();
+            month = dO.getMonth() +1;   //Jan starts at index 0 so add 1 to set month correctly
+            month = month.toString();
+            year = dO.getFullYear();
+            year = year.toString();
+            $('h2').text(month +'/' + dmonth  +'/' + year);
+        });
+    </script>
+    <style>
+        h1, h2{
+            text-align: center;
+            font-family: "Helvetica", "Arial", sans-serif;
+            font-size: 2em;
+        }
+        h2{
+            font-size: 1.5em;
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+<h1>Hello, today is:</h1>
+<h2></h2>                           <!--JS .text inserts the date into the h2 tags.-->
+
+
+
+</body>
+</html>
