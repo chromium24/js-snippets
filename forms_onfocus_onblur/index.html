@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Forms- Onfocus and Onblur</title>
+    <style>
+        form{
+            width: 400px;
+            background: #ccc;
+            margin: 0 auto;
+        }
+
+        th{
+            font-size: 20px;
+        }
+
+        td{
+            text-align: right;
+        }
+        input{
+            color: #707070;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+        <tr>
+            <th>Contact Information</th>
+        </tr>
+        <tr>
+            <td><label for="name" >Name:</label><input type="text" id="name" size="25" /></td>
+        </tr>
+        <tr>
+            <td><label for="address">Address:</label><input type="text" id="address" size="25"  /></td>
+        </tr>
+        <tr>
+           <td><label for="phone">Phone:</label><input type="text" id="phone" size="25" /></td>
+        </tr>
+        </table>
+    </form>
+<script>
+    var nameField = document.getElementById("name"); //grab address field using id and assign variable name
+    nameField.onfocus = function(){                      //onfocus is when tabbing into field, pre-existing text disappears
+        if(nameField.value == "Your Name"){           //if field has text in it then..
+            nameField.value = "";                    //set field to empty string
+        }
+    };
+
+    nameField.onblur = function(){                       //reverse of onfocus. after tabbing out of field, pre-existing text will re-appear
+        if(nameField.value == ""){                       //if field is empty then..
+            nameField.value = "Your Name";        //insert text into field
+        }
+    };
+
+    var addressField = document.getElementById("address"); //grab address field using id and assign variable name
+    addressField.onfocus = function(){                      //onfocus is when tabbing into field, pre-existing text disappears
+        if(addressField.value == "Your Address"){           //if field has text in it then..
+                addressField.value = "";                    //set field to empty string
+        }
+    };
+
+    addressField.onblur = function(){                       //reverse of onfocus. after tabbing out of field, pre-existing text will re-appear
+        if(addressField.value == ""){                       //if field is empty then..
+                addressField.value = "Your Address";        //insert text into field
+        }
+    };
+
+    var phoneField = document.getElementById("phone"); //grab address field using id and assign variable name
+    phoneField.onfocus = function(){                      //onfocus is when tabbing into field, pre-existing text disappears
+        if(phoneField.value == "Your Phone Number"){           //if field has text in it then..
+            phoneField.value = "";                    //set field to empty string
+        }
+    };
+
+    phoneField.onblur = function(){                       //reverse of onfocus. after tabbing out of field, pre-existing text will re-appear
+        if(phoneField.value == ""){                       //if field is empty then..
+            phoneField.value = "Your Phone Number";        //insert text into field
+        }
+    }
+
+</script>
+</body>
+</html>
