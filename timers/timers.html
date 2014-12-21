@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JavaScript Timers</title>
+    <style>
+        .resize{
+            width: 500px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<h1>JavaScript Slideshow</h1>
+<img src="sunset1.jpg" class="resize" id="pic_holder" />
+<script>
+    var firstImage = document.getElementById("pic_holder");  //grab image element and assign variable name
+    var imageArray = ["sunset2.jpg", "sunset3.jpg", "sunset4.jpg", "sunset5.jpg","sunset1.jpg"];  //array containing images for slide show
+    var i=0; //image index
+
+    function changeImage(){                             //function to rotate images and will repeat itself
+        firstImage.setAttribute("src", imageArray[i]);  //will change image when index of image changes from imageArray
+        i++;                                            //increment i for image progression
+        if(i >= imageArray.length){                      //when slide show reaches last image, i is reverted to 0 to repeat slide show
+            i = 0;
+        }
+    }
+
+
+
+var intervalHandle = setInterval(changeImage,5000);        //time delay between images and makes a call to function changeImage
+firstImage.onclick = function(){                            //using js event handler onclick, function to clear interval is triggered which stops the slide show
+    clearInterval(intervalHandle);
+}
+</script>
+</body>
+</html>
