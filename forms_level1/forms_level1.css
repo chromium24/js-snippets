@@ -1,0 +1,38 @@
+#contact{
+    width: 800px; height: auto;
+    margin: 2em auto;
+    background-color: #938c69;
+    padding: 1em;
+    border-radius: 10px;
+    color: #27150e;
+}
+
+fieldset{
+    font-size: 30px;
+    text-align: center;
+
+}
+
+.field{
+    float: left;
+    font-size: 20px;
+    text-align: right;
+    width: 100px;
+    padding-right: 10px;
+
+}
+
+#error_msg{
+    color: red;
+    font-size: 18px;
+    margin: 0 0 30px 110px;
+}
+
+#submit{
+    margin-left: 110px;
+}
+
+h2{
+    font-size: 25px;
+    color: #27150e;
+}
