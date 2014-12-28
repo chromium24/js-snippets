@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Traverse DOM</title>
+    <style>
+        #container{
+            width: 600px;
+            border: 2px solid green;
+            border-radius: 10px;
+            padding: 1em;
+            margin: 1em auto;
+        }
+        .seeme{
+            visibility: hidden;
+        }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script>
+        $("document").ready(function() {
+            console.log("There are " + $("p").length + " paragraphs."); //.length method returns same value as .size() but is slightly faster
+            console.log("There are " + $("p").size() + " paragraphs.");//since it avoids a function call. These two yield numbers.
+            console.log($("li").get(0).innerHTML);     //retrieves the DOM elements matched by the jQuery object. In this case, li index 0 yields the string "12 oz. spinach.."
+            $("ul").find("li.findMe").css("color","purple");    //
+
+            var border = 1;         //the "each" function traverses through each DOM element specified (in this case, p)
+            var margin = 5;         //set initial values for border and margin
+            $("p").each(function(){     //use "each" function to traverse through all paragraphs
+                $(this).css("border", border + "px solid blue");    //first paragraph gets margin=1px and border=5px blue
+                $(this).css("margin", margin + "px");
+                border += border;   //increment border value +1px
+                margin += margin;   //increment margin value +5px
+                                    //the "each" function loops through each element and the margins and borders continue to increase.
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+<div id="container">
+    <h1>Knorr Spinach Dip</h1>
+    <ul id="ingredients">
+        <li>12 oz. frozen spinach</li>
+        <li class="findMe">1 cup mayonnaise</li>
+        <li>16 oz. sour cream</li>
+        <li class="findMe">1 package Knorr Vegetable Recipe for dips</li>
+        <li>3 chopped green onions</li>
+        <li>1 can chopped water chestnuts</li>
+        <li>1 loaf of sour dough bread</li>
+        <li class="findMe">1 medium bowl</li>
+    </ul>
+
+    <p>To starting making the dip, thaw spinach and drain. In medium bowl, mix mayo, sour cream, Knorr Vegetable Recipe, water chestnuts, and green onions. </p>
+    <p>Add in spinach and
+        mix thoroughly. </p>
+    <p>Cut off top of sour dough bread (about top 1/3 of loaf) and scoop out bread.</p>
+    <p>Fill with the dip mixture and chill for two hours
+        before serving.</p>
+
+
+</div>
+</body>
+</html>
