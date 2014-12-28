@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Content & Visibility Filters</title>
+    <style>
+        #container{
+            width: 600px;
+            border: 2px solid green;
+            border-radius: 10px;
+            padding: 1em;
+            margin: 1em auto;
+        }
+        .seeme{
+            visibility: hidden;
+        }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script>
+        $("document").ready(function(){
+            $("li:contains(oz)").css("color","blue");   //content filter to select all li's containing string "oz" and color to blue
+            $("p:contains(dip), li:contains(dip)").css("color","red");    //multiple selections=content filter to select p's and li containing text string "dip" and color to red
+            $("p:parent").css("background","tan");      //selector checks for paragraphs that have child nodes (text) and sets bkgd color to tan.Notice nothing happens to empty p set.
+            $("ul li:nth-child(3)").css("color","orange");//selector that finds nth child of parent element ul and color to orange
+            $("ul li:last-child").css("border","2px dashed purple"); //selects last child of parent element ul and add purple border
+            $("ul li:nth-child(2n)").css("font-weight","bold");//IMPORTANT-when using equation for nth-child selector, index begins at 1, NOT 0.
+            $("li:hidden").css("visibility","visible");  //use visiblity selector by finding li with attribute "hidden" and change to visible
+        });
+
+
+    </script>
+</head>
+<body>
+<div id="container">
+<h1>Knorr Spinach Dip</h1>
+<ul id="ingredients">
+    <li>12 oz. frozen spinach</li>
+    <li>1 cup mayonnaise</li>
+    <li>16 oz. sour cream</li>
+    <li class="pickme">1 package Knorr Vegetable Recipe for dips</li>
+    <li>3 chopped green onions</li>
+    <li>1 can chopped water chestnuts</li>
+    <li>1 loaf of sour dough bread</li>
+    <li class="seeme">1 medium bowl</li>
+</ul>
+
+<p>To starting making the dip, thaw spinach and drain. In medium bowl, mix mayo, sour cream, Knorr Vegetable Recipe, water chestnuts, and green onions. </p>
+<p>Add in spinach and
+mix thoroughly. </p>
+<p>Cut off top of sour dough bread (about top 1/3 of loaf) and scoop out bread.</p>
+<p>Fill with the dip mixture and chill for two hours
+before serving.</p>
+<p></p>
+</div>
+</body>
+</html>
