@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Manipulating Attributes</title>
+    <style>
+        img{
+            width: 600px;
+        }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        $("document").ready(function(){
+            $("a").attr("target","_blank"); //changed attribute so link opens in new window
+            $("a.home").removeAttr("href"); //remember to use .removeAttr NOT .removeAttribute
+            $("img.cat").attr({src:"dog.jpg", alt: "A Boxer Puppy", title:"A Boxer Puppy"});
+
+
+        });
+    </script>
+</head>
+
+
+<body>
+<h2>Manipulating Attributes Using jQuery</h2>
+<h4>The attribute has been manipulated for this image using jQuery .attr() to set target to _blank so image opens in a new window.</h4>
+<a href="http://www.jaguar.com" ><img src="jag.jpg" alt="Jaguar XK" /></a> <!--without jquery, if you click on img, you will just see the image again as .jpg-->
+<hr />
+<h4>The href attribute has been removed using jQuery for the image below.</h4>
+<a href="http://remax.com" class="home"><img src="house.JPG" alt="house" /></a>
+<hr />
+<h4>The image below originally displayed a cat. Using jQuery .attr(), the image src attribute was changed to dog.jpg. The alt and title
+attributes were changed from "cat" to "A Boxer Puppy". </h4>
+<img src="cat.jpg" alt="cat" class="cat" title="cat" />
+
+</body>
+</html>
