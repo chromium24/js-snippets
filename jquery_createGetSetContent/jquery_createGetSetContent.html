@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Create, Get, & Set Content</title>
+    <style>
+        #container{
+            width: 700px;
+            border: 2px solid #000;
+            margin: 1em auto;
+            padding: 1em;
+            border-radius: 10px;
+        }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        $("document").ready(function(){
+            $("h1").css("text-align","center");
+            $("h2").css("font-size","18px");
+            alert($("#states").html()); //will display html content of list "states" in alert message
+            $("#states").find("li:last-child").after("<li>Wisconsin</li>");//traverse DOM, select correct ul, find specific element   //you want to add new list item after
+            $("#capitals").find("li:last-child").after("<li>Madison</li>");
+            $("#states").find("li:last-child").css("color","orange");
+            $("#capitals").find("li:last-child").css("color","orange");
+            $("#counties").html("<li>" + "Larimer" + "</li>");  //replace the 3 counties list items with "Larimer"
+
+            var container = "div.demo-container";   //div containing an inner div plus unordered list
+            alert($(container).html()); //returns all text content FORMATTED WITH HTML TAGS. DOES NOT WORK WITH XML.
+            alert($(container).text()); //returns text content STRIPPED OF HTML TAGS. WORKS WITH XML and HTML
+
+
+        });
+
+    </script>
+</head>
+<body>
+
+    <div id="container">
+        <h1>Creating, Getting, and Setting Content with jQuery</h1>
+        <h2>Entries in orange were added using jQuery .find() and "li: last child" to insert new list items. In the Counties list
+        three entries (Broward, King, Pierce) were replaced with "Larimer" using .html.</h2>
+        <h3>U.S. States</h3>
+        <ul id="states">
+            <li>Washington</li>
+            <li>Colorado</li>
+            <li>California</li>
+            <li>Texas</li>
+            <li>Tennessee</li>
+            <li>Nebraska</li>
+            <li>Rhode Island</li>
+            <li>Maine</li>
+        </ul>
+
+        <h3>State Capitals</h3>
+        <ul id="capitals">
+            <li>Olympia</li>
+            <li>Denver</li>
+            <li>Sacramento</li>
+            <li>Austin</li>
+            <li>Nashville</li>
+            <li>Lincoln</li>
+            <li>Providence</li>
+            <li>Augusta</li>
+        </ul>
+
+        <h3>Counties</h3>
+        <ul id="counties">
+            <li>Broward</li>
+            <li>King</li>
+            <li>Pierce</li>
+        </ul>
+
+        <h3>The United States</h3>
+        <p class="info">The U.S. is in the North American continent.</p>
+
+        <div class="demo-container">
+            <div class="demo-box">Demonstration Box</div>
+            <ul>
+                <li>list item 1</li>
+                <li>list <strong>item</strong> 2</li>
+            </ul>
+        </div>
+</div>
+
+</body>
+</html>
