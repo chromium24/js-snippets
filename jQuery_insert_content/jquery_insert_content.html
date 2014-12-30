@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Inserting Content with jQuery</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        $("document").ready(function(){
+            $("h3").css({"text-align": "center", "color": "Maroon"}); 
+            var para = $("p");
+            $(para).append("Adding Text At the End!"); //adding string to end of each paragraph.
+            $(para).prepend("Here's Beginning Text! ");//add string to beginning to each paragraph
+            $("p:last").appendTo("p:first"); //add paragraph five to paragraph one
+            $('p:contains("THIRD PARAGRAPH")').css("color","red"); //select paragraph containing specific text and color to red.
+        });
+    </script>
+</head>
+<body>
+<div>
+<h2>Using jQuery to Insert Content</h2>
+<h3>New text added to end of each paragraph using append(). New text added to beginning to each paragraph using prepend().
+Last paragraph appended to first paragraph using appendTo(). Selected paragraph contain text "THIRD PARAGRAPH" and set
+font color to red.</h3>
+<p>FIRST PARAGRAPH. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid aperiam asperiores autem ex id
+    inventore repellat voluptatem? Ad, aut doloribus et explicabo inventore itaque neque nostrum omnis praesentium
+    quasi.
+</p>
+<p>SECOND PARAGRAPH. Alias aperiam, at culpa eaque enim, illum labore libero magnam officia quibusdam sint sit voluptates. Alias commodi
+    deleniti dolor explicabo iusto maxime quo, similique. Ad beatae minus provident suscipit vitae.
+</p>
+<p>THIRD PARAGRAPH. Adipisci amet, blanditiis consequatur consequuntur deleniti distinctio dolorem doloremque doloribus ducimus ea enim
+    facilis fugiat illum in iure, magnam minima officia optio pariatur porro quam quod reiciendis suscipit ullam vel?
+</p>
+<p>FOURTH PARAGRAPH. Architecto asperiores cupiditate eligendi fuga impedit ipsa quibusdam, quisquam repellat reprehenderit saepe.
+    Accusamus accusantium amet animi architecto atque aut, consequatur delectus deserunt dignissimos eligendi
+    exercitationem hic labore maiores nihil vero.
+</p>
+<p>FIFTH PARAGRAPH. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut beatae consectetur dignissimos, dolores earum
+    eligendi eveniet labore natus, necessitatibus odio quae quas quisquam quod sed sunt suscipit tenetur vero?</p>
+</div>
+
+</body>
+</html>
