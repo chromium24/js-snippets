@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Offset Positioning</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        $("document").ready(function(){
+            $("#container").css({"width":"800px","margin": "0 auto", "border":"1px solid green"});
+            var boxStyle = {
+                "width": "300px",
+                "height": "300px",
+                "background-color": "blue",
+                "border": "2px solid #000"
+            };
+
+            var anotherBoxStyle ={
+             "width": "200px",
+             "height": "200px",
+             "background-color": "yellow",
+             "border": "2px solid #000",
+             "z-index": "5" //set z-index so yellow box overlaps all other boxes even though the orange one would normally take precedence
+
+             };
+            var thirdBoxStyle ={
+                "width": "500px",
+                "height": "500px",
+                "background-color": "orange",
+                "border": "2px solid #000"
+            };
+
+            //position the boxes and set css values. can overlap the elements
+            $("#box").css(boxStyle).offset({top: 20, left: 50}); //pixel values
+            $("#anotherBox").css(anotherBoxStyle).offset({top: 100, left: 300});
+            $("#thirdBox").css(thirdBoxStyle).offset({top: 200, left: 300});    //orange box overlaps blue and yellow boxes but z-index of the yellow is higher so yellow one overlaps all
+
+
+
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+
+    <div id="box"> </div>
+        <div id="anotherBox"></div>
+            <div id="thirdBox"></div>
+
+
+
+
+
+
+
+</body>
+</html>
