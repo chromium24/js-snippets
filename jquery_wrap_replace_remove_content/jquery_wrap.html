@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Wrap</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        $("document").ready(function(){
+             $("p.each").wrap("<div id='newWrapper'></div>");    //WRAPS ELEMENTS INDIVIDUALLY. EACH <P> IS WITHIN A DIV ELEMENT WITH ID OF NEWWRAPPER
+             $("p.bunch").wrapAll("<div id='BigWrapper'></div>");      //WRAPS ALL AFFECTED ELEMENTS TOGETHER AS A GROUP UNDER ONE DIV
+             $('span').wrapInner('<b></b>'); //INSERTS HTML TAGS INSIDE OF OUTER ELEMENT
+             $('p.bold').replaceWith("<i>Yet another sentence.</i>");   //removes inner tags and content and replaces with new inner tags plus content.
+             $("<p>Trying to make it work.</p>").replaceAll('.happy');  //replaceAll works by first specifying what you want to insert and THEN insert elements you want to change into function replaceAll
+             $('p').css("color","blue");
+             $('i').css("color","maroon");
+             $('span').css("color","green");
+        });//end document ready
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h2>In this section, jQuery functions used are .wrap() and .wrapAll().</h2>
+
+        <p class="each">Using jQuery .wrap(), this paragraph will be wrapped inside a div with id="newWrapper".</p>
+
+        <p class="each">Sentence Two.</p>
+
+        <p class="each">Sentence Three.</p>
+
+        <hr/>
+
+        <p class="bunch">Hello.</p>
+        <p class="bunch">Hi.</p>
+        <p class="bunch">Hi There.</p>
+        <h2>Here, .innerWrap is used.</h2>
+        <span>Last sentence.</span>
+
+        <hr/>
+        <h2>Here, replaceWith() is used.</h2>
+        <p class="bold"><b>Another last sentence.</b></p>
+
+        <h2>Here, replaceAll() is used.</h2>
+        <h3>Initially, a span element containing the string text "Happy New Year" existed. jQuery removed
+        the span and changed it to a paragraph element displaying the text you see now.</h3>
+        <span class="happy">Happy New Year</span>
+
+
+
+
+
+
+    </div>
+
+</body>
+</html>
