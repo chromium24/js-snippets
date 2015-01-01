@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Grocery List</title>
+    <!--PURE JAVASCRIPT-NO JQUERY-->
+    <!--A quick exercise in grabbing HTML elements in the DOM to manipulate and to insert new elements with content-->
+    <!--Using inline styles and js for expediency-->
+    <style>
+        body{
+           background: rgba(153, 251, 153, 0.43);
+       }
+        #wrapper{
+            width: 400px;
+            margin: 0 auto;
+            background: aliceblue;
+            text-align: left;
+            font-family: "century gothic", sans-serif;
+            color: purple;
+            padding: 1em;
+            border: 2px dashed purple;
+        }
+
+        h1,h3{
+            color: #42aa1d;
+        }
+
+        h3{
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        ul{
+            list-style-type: circle;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+
+        <h1>Grocery List</h1>
+
+        <h4>Event Date: November 20th</h4>
+
+
+    <ul id="list">
+        <li>Milk</li>
+        <li>Eggs</li>
+        <li>Bacon</li>
+        <li>Oranges</li>
+        <li>Bread</li>
+        <li>Chicken</li>
+    </ul>
+
+    <script>
+        //this section addresses appending a new list item to end of list using appendChild
+        var add_item = document.createElement("li");  //create a new element <li>first
+        add_item.innerHTML = "Sausages";  //assign a value to this element - in this case, a string
+        document.getElementById("list").appendChild(add_item);  //grab DOM element that we want to add element
+                                                                // to and then append it (remember append will add item to last position of element)
+
+
+        //this section addresses appending a new list item AS THE SECOND ITEM and moving previous second item down to third place
+        var secondItem = document.createElement("li"); //create a new element <li>
+        secondItem.innerHTML = "Cheddar Cheese"; //assign string value to new element
+        var secondPosition = document.getElementsByTagName("li")[1]; //the ul list items are in an array so specify which array element we want to grab
+        list.insertBefore(secondItem, secondPosition);  //grab parent node, insert the new element "secondItem" into position specified as secondPosition
+
+
+        //this section addresses adding a new node after the <h1> tag
+        var desc = document.createElement("h3");    //create new <h3> element
+        desc.innerHTML = "For My Sunday Brunch";    //text content for new element
+        var firstHeading = document.getElementsByTagName("h1")[0];
+        firstHeading.appendChild(desc);
+    </script>
+    </div><!--/.wrapper-->
+</body>
+</html>
