@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Event Object</title>
+    <style>
+        #box1, #box2,#box3 {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #000;
+            background-color: pink;
+            margin: 1em auto;
+        }
+        #box2{
+            background-color: lightblue;
+        }
+
+        #box3{
+            background-color: palegreen;
+        }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("div").click(function(evt){
+                $(this).html("PageX: " + evt.pageX + " PageY: " + evt.pageY + "<br/>" + "Event Type: " + evt.type + "<br/>" +  "Event Target: " + evt.target);
+            });
+
+        });
+
+
+    </script>
+</head>
+<body>
+<h2>IE handles events differently than other browsers. Other browsers uses the DOM2 model. IE has its own model. jQuery smooths this
+    issue out by creating a jQuery object.</h2>
+<h3>Click on each box. You will see the x and y coordinates relating to the click event relative to the document. Event type returns
+the type of event used which in this case is "click". Target returns what element issued the event. These functions work
+properly in IE as well as Chrome and Firefox.</h3>
+<div id="box1"></div>
+<div id="box2"></div>
+<div id="box3"></div>
+</body>
+</html>
