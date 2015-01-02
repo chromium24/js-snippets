@@ -21,7 +21,11 @@
     <script>
         $(function(){
             $("#box").on("mouseover mouseleave", changeColor);  //The events are mouseover and mouseleave. These events trigger the function changeColor()
-
+            //now I will set up a function that will turn off the changeColor function when the box is clicked.
+            $("#box").on("click", function(evt){
+                $("#box").off("mouseover mouseleave", changeColor);
+                $("#box").html("<p>The mouseover and mouseout event handler is turned off!").css({"font-size":"20px", "color":"#fff"});
+            });
 
         });
         function changeColor(evt){                  //typically, evt is entered as an argument. has no value but indicates it's an event function
@@ -30,9 +34,10 @@
     </script>
 </head>
 <body>
-<h2>Here, the event handler will listen for the events mouseover and mouseout. When those events occur, the toggleClass() helper
+<h2>Here, the event handler will listen for the events mouseover and mouseleave. When those events occur, the toggleClass() helper
 function will be triggered. The background color changes upon mouseover.</h2>
 <div id="box" class="noMouse"></div>
+<h2>After mousing over the box, click the box to see what happens!</h2>
 
 </body>
 </html>
