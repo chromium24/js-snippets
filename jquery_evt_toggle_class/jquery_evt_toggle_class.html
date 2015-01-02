@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Event Handler & Toggle Class Helper Function</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #000;
+        }
+        .noMouse{
+            background-color: #880000;
+        }
+
+        .onMouse{
+            background-color: #333000;
+        }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#box").on("mouseover mouseleave", changeColor);  //The events are mouseover and mouseleave. These events trigger the function changeColor()
+
+
+        });
+        function changeColor(evt){                  //typically, evt is entered as an argument. has no value but indicates it's an event function
+            $("#box").toggleClass("onMouse");       //helper function toggleClass will toggle between two classes. enter in the second class in the argument
+        }                                           //mouseover shows a maroon color and mouseout shows a brown color
+    </script>
+</head>
+<body>
+<h2>Here, the event handler will listen for the events mouseover and mouseout. When those events occur, the toggleClass() helper
+function will be triggered. The background color changes upon mouseover.</h2>
+<div id="box" class="noMouse"></div>
+
+</body>
+</html>
