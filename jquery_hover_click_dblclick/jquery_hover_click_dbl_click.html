@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Hover, Click, and Double Click Events</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #000;
+        }
+        .noMouse{
+            background-color: #880000;
+        }
+
+        .onMouse{
+            background-color: #333000;
+        }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#box").hover(changeColor,changeColor);  //The events are mouseover and mouseleave. These events trigger the function changeColor()
+            //now I will set up a function that will turn off the changeColor function when the box is clicked.
+            $("#box").click(click);
+            $("#box").dblclick(doubleClick);
+
+        });
+        function changeColor(evt){                  //typically, evt is entered as an argument. has no value but indicates it's an event function
+            $("#box").toggleClass("onMouse");       //helper function toggleClass will toggle between two classes. enter in the second class in the argument
+        }                                           //mouseover shows a maroon color and mouseout shows a brown color
+
+        function click(){
+            $("#box").html("Clicked!").css("color","#fff");
+        }
+
+        function doubleClick(){
+            $("#box").html("Double Clicked").css("color","orange");
+        }
+
+
+    </script>
+</head>
+<body>
+<h2>Hover is more efficient that using mouseover and mouseleave because it handles both events. In this case, we have
+three event listeners - hover, click, and double click.</h2>
+<div id="box" class="noMouse"></div>
+<h2>After mousing over the box, click the box to see what happens! Then double click the box!</h2>
+
+</body>
+</html>
