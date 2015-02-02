@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!--Note: use of show and hide causes changes in width and height of div-- example if you click fade out, the box disappears
+    and the buttons jump to top and if you click show, box reappears and buttons jump back down below box
+    the easing in and out of the box when using show/hide vs fadeIn and fadeOut differs-->
+    <meta charset="UTF-8">
+    <title>jQuery Effects - Show/Hide and FadeIn/FadeOut</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <style>
+        #box, #box2{
+            width: 200px; height: 200px;
+            background-color: red;
+            border: 2px solid #000;
+        }
+        #box2{
+            background-color: green;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#show").click(function(){
+                $("#box").show(3000);
+            });//end show
+            $("#hide").click(function(){
+                $("#box").hide(3000);
+            });//end hide
+            $("#toggle").click(function(){
+                $("#box").toggle(3000);
+            });//end toggle
+            $("#fadein").click(function(){
+                $("box2").fadeIn(3000);
+            });//end fadeIn
+            $("#fadeout").click(function(){
+                $("#box2").fadeOut(3000);
+            });//end fade out
+            $("#fadeto").click(function(){
+                $("#box2").fadeTo(3000, 0.3);
+            });//end fade to
+
+
+        });//end ready
+
+    </script>
+</head>
+<body>
+<h1>Notice the differences in the "easing in" effects between the two boxes</h1>
+<h2>Show, Hide, and Toggle Effects</h2>
+<div id="box"></div>
+<input type="button" id="show" value="Show">
+<input type="button" id="hide" value="Hide">
+<input type="button" id="toggle" value="Toggle It">
+
+<h2>FadeIn, FadeOut, and FadeTo Effects</h2>
+<div id="box2"></div>
+<input type="button" id="fadein" value="Fade In">
+<input type="button" id="fadeout" value="Fade Out">
+<input type="button" id="fadeto" value="Fade To">
+
+
+
+
+
+</body>
+</html>
